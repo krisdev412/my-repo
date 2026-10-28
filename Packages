@@ -12,8 +12,9 @@ Package: com.kris.kumo
 Name: Kumo
 Version: 1.0
 Architecture: iphoneos-arm
-Description: A simple weather app with a clean and stylish UI
-Maintainer: Kris
+Description: A simple weather app with a clean and stylish UI.
+Depiction: https://krisdev412.github.io/my-repo/depictions/kumo.html
+Maintainer: Kris <kris@email.com>
 Author: Kris
 Section: Tweaks
 Depends: mobilesubstrate
