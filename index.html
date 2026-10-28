@@ -116,6 +116,11 @@
             align-items: flex-start;
             gap: 14px;
             cursor: pointer;
+            transition: 0.2s;
+        }
+        .package-card:hover {
+            border-color: #8b949e;
+            transform: translateY(-2px);
         }
         .pkg-icon {
             width: 48px;
@@ -178,7 +183,7 @@
 <body>
 
     <div class="container">
-        <!-- Шапка -->
+        <!-- Шапка с аватаркой репозитория -->
         <div class="hero">
             <div class="hero-left">
                 <h1>Kris41's Repo</h1>
@@ -207,3 +212,49 @@
             <div class="package-card" onclick="openModal('NoSlider', '1.0-stable', 'Разблокировка экрана кнопкой вместо свайпа.')">
                 <img src="icons/noslider.png" class="pkg-icon" alt="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'100%\' height=\'100%\' fill=\'%2321262d\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%238b949e\' font-size=\'16\'>NS</text></svg>'">
                 <div class="pkg-info">
+                    <div class="pkg-name">NoSlider</div>
+                    <div class="pkg-meta">1.0-stable</div>
+                    <p class="pkg-desc">Разблокировка экрана кнопкой вместо свайпа.</p>
+                </div>
+            </div>
+
+            <!-- Kumo -->
+            <div class="package-card" onclick="openModal('Kumo', '1.0-stable', 'Красивое приложение погоды со стильным интерфейсом.')">
+                <img src="icons/kumo.png" class="pkg-icon" alt="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'100%\' height=\'100%\' fill=\'%2321262d\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%238b949e\' font-size=\'16\'>KM</text></svg>'">
+                <div class="pkg-info">
+                    <div class="pkg-name">Kumo</div>
+                    <div class="pkg-meta">1.0-stable</div>
+                    <p class="pkg-desc">Красивое приложение погоды со стильным интерфейсом.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content">
+            <div id="m-title" class="modal-title">Название</div>
+            <div id="m-meta" class="modal-meta">Версия</div>
+            <div id="m-desc" class="modal-desc">Описание</div>
+            <button class="close-btn" onclick="closeModalDirect()">Закрыть</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, meta, desc) {
+            document.getElementById('m-title').innerText = title;
+            document.getElementById('m-meta').innerText = meta;
+            document.getElementById('m-desc').innerText = desc;
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function closeModal(e) {
+            if (e.target.id === 'modal') {
+                document.getElementById('modal').style.display = 'none';
+            }
+        }
+        function closeModalDirect() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
