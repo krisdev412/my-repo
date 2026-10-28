@@ -7,25 +7,17 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.95)), url('bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
             background-color: #0d1117;
             color: #ffffff;
             margin: 0;
             padding: 20px;
-            -webkit-text-size-adjust: 100%;
         }
-
         .container {
             max-width: 900px;
             margin: 0 auto;
         }
-
-        /* Шапка профілю з аватаркою */
         .hero {
-            background: linear-gradient(135deg, #161b22, #1f242c);
+            background: #161b22;
             border: 1px solid #30363d;
             border-radius: 16px;
             padding: 25px;
@@ -33,13 +25,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
         }
         .hero-left h1 {
             margin: 0 0 6px 0;
             font-size: 28px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
             color: #ffffff;
         }
         .hero-left .subtitle {
@@ -59,22 +48,17 @@
             object-fit: cover;
             border: 2px solid #30363d;
             background-color: #21262d;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
-
-        /* Блок репозиторію та кнопок */
         .repo-box {
             background: #161b22;
             border: 1px solid #30363d;
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
         .repo-url-label {
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
             color: #8b949e;
             margin-bottom: 6px;
             font-weight: bold;
@@ -98,4 +82,115 @@
             border: 1px solid #30363d;
             color: #ffffff;
             padding: 12px 16px;
-            border-radius:
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-sileo {
+            background: #1f6feb;
+            border-color: #388bfd;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 15px;
+        }
+        .package-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 14px;
+            padding: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            cursor: pointer;
+        }
+        .pkg-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            object-fit: cover;
+            background: #21262d;
+            border: 1px solid #30363d;
+            flex-shrink: 0;
+        }
+        .pkg-info {
+            flex-grow: 1;
+            min-width: 0;
+        }
+        .pkg-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 3px;
+        }
+        .pkg-meta {
+            font-size: 12px;
+            color: #58a6ff;
+            font-family: monospace;
+            margin-bottom: 6px;
+        }
+        .pkg-desc {
+            font-size: 12px;
+            color: #8b949e;
+            margin: 0;
+            line-height: 1.4;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        .modal-content {
+            background: #161b22;
+            border: 1px solid #30363d;
+            padding: 24px;
+            border-radius: 16px;
+            width: 85%;
+            max-width: 380px;
+        }
+        .modal-title { font-size: 20px; font-weight: bold; margin-bottom: 6px; color: #fff; }
+        .modal-meta { font-size: 13px; color: #58a6ff; font-family: monospace; margin-bottom: 12px; }
+        .modal-desc { font-size: 13px; color: #8b949e; margin-bottom: 20px; line-height: 1.5; }
+        .close-btn {
+            background: #21262d; color: #fff; border: 1px solid #30363d;
+            padding: 10px 16px; border-radius: 10px; font-weight: bold; width: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="hero">
+            <div class="hero-left">
+                <h1>Kris41's Repo</h1>
+                <div class="subtitle">официальный репозиторий iOS твиков</div>
+                <div class="desc">инструменты, твики и модификации для джейлбрейка</div>
+            </div>
+            <img src="avatar.jpg" class="avatar" alt="Avatar" onerror="this.src='avatar.png'">
+        </div>
+
+        <div class="repo-box">
+            <div class="repo-url-label">Repository URL</div>
+            <div class="repo-url-text">https://krisdev412.github.io/my-repo/</div>
+            
+            <div class="buttons-grid">
+                <a href="cydia://url/
+                    
