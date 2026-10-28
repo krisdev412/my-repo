@@ -6,117 +6,188 @@
     <title>Kris41's Repo</title>
     <style>
         body {
-            font-family: -apple-system, Helvetica, Arial, sans-serif;
-            /* Путь к твоей картинке на фоне */
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('bg.jpg');
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            /* Фоновая картинка (если падает, будет просто стильный темный фон) */
+            background: linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.95)), url('bg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            background-color: #0d1117;
             color: #ffffff;
             margin: 0;
-            padding: 15px;
+            padding: 20px;
             -webkit-text-size-adjust: 100%;
         }
-        .header {
-            text-align: center;
-            padding: 25px 10px;
-            background: rgba(30, 30, 36, 0.75);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 14px;
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Большой верхний баннер с аватаром */
+        .hero {
+            background: linear-gradient(135deg, #161b22, #1f242c);
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 25px;
             margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        h1 {
-            margin: 0 0 8px 0;
-            font-size: 24px;
-            color: #ffffff;
-        }
-        p.sub {
-            margin: 0;
-            color: #98989f;
-            font-size: 14px;
-        }
-        .buttons {
-            text-align: center;
-            margin: 15px 0;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #0a84ff;
-            color: #ffffff;
-            padding: 10px 16px;
-            margin: 6px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            box-shadow: 0 4px 10px rgba(10, 132, 255, 0.3);
-        }
-        .btn:active {
-            opacity: 0.7;
-        }
-        .section-title {
-            color: #8e8e93;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 20px 5px 10px 5px;
-            font-weight: bold;
-        }
-        .card {
-            background-color: rgba(28, 28, 30, 0.75);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 14px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
         }
-        .card-info {
-            flex-grow: 1;
-            margin-right: 10px;
-        }
-        .card-title {
-            font-size: 16px;
-            font-weight: bold;
+        .hero-left h1 {
+            margin: 0 0 6px 0;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
             color: #ffffff;
-            margin-bottom: 4px;
         }
-        .card-desc {
-            font-size: 13px;
-            color: #aeaeb2;
+        .hero-left .subtitle {
+            margin: 0 0 12px 0;
+            color: #8b949e;
+            font-size: 14px;
+        }
+        .hero-left .desc {
             margin: 0;
-            line-height: 1.3;
+            color: #c9d1d9;
+            font-size: 13px;
         }
-        .card-right {
-            text-align: right;
-            min-width: 70px;
+        .avatar {
+            width: 75px;
+            height: 75px;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 2px solid #30363d;
+            background-color: #21262d;
         }
-        .badge {
-            display: inline-block;
-            background-color: rgba(44, 44, 46, 0.8);
-            color: #0a84ff;
-            padding: 3px 8px;
-            border-radius: 6px;
+
+        /* Блок с URL репозитория и кнопками */
+        .repo-box {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .repo-url-label {
             font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8b949e;
+            margin-bottom: 6px;
             font-weight: bold;
+        }
+        .repo-url-text {
+            font-family: monospace;
+            color: #58a6ff;
+            font-size: 13px;
+            margin-bottom: 16px;
+            word-break: break-all;
+        }
+        .buttons-grid {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            flex: 1;
+            min-width: 130px;
+            background: #21262d;
+            border: 1px solid #30363d;
+            color: #ffffff;
+            padding: 10px 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            text-align: center;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .btn:hover {
+            background: #30363d;
+            border-color: #8b949e;
+        }
+        .btn-sileo {
+            background: #1f6feb;
+            border-color: #388bfd;
+        }
+        .btn-sileo:hover {
+            background: #388bfd;
+        }
+
+        /* Заголовок секции пакетов */
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        /* Сетка твиков (2 колонки) */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 15px;
+        }
+
+        /* Карточка твика */
+        .package-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 14px;
+            padding: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        .package-card:hover {
+            border-color: #8b949e;
+            transform: translateY(-2px);
+        }
+        .pkg-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            object-fit: cover;
+            background: #21262d;
+            flex-shrink: 0;
+            border: 1px solid #30363d;
+        }
+        .pkg-info {
+            flex-grow: 1;
+            min-width: 0;
+        }
+        .pkg-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 3px;
+        }
+        .pkg-meta {
+            font-size: 12px;
+            color: #58a6ff;
+            font-family: monospace;
             margin-bottom: 6px;
         }
-        .details-btn {
-            background-color: #3a3a3c;
-            color: #ffffff;
-            border: none;
-            padding: 6px 10px;
-            border-radius: 6px;
+        .pkg-desc {
             font-size: 12px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
+            color: #8b949e;
+            margin: 0;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
+
         /* Модальное окно */
         .modal {
             display: none;
@@ -126,59 +197,115 @@
             justify-content: center;
             align-items: center;
             z-index: 100;
+            backdrop-filter: blur(4px);
         }
         .modal-content {
-            background: #1c1c1e;
-            padding: 20px;
-            border-radius: 14px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            padding: 24px;
+            border-radius: 16px;
             width: 85%;
-            max-width: 320px;
-            border: 1px solid #3a3a3c;
+            max-width: 380px;
         }
-        .modal-title { font-size: 18px; font-weight: bold; margin-bottom: 8px; }
-        .modal-desc { font-size: 13px; color: #aeaeb2; margin-bottom: 15px; line-height: 1.4; }
+        .modal-title { font-size: 20px; font-weight: bold; margin-bottom: 6px; color: #fff; }
+        .modal-meta { font-size: 13px; color: #58a6ff; font-family: monospace; margin-bottom: 12px; }
+        .modal-desc { font-size: 13px; color: #8b949e; margin-bottom: 20px; line-height: 1.5; }
         .close-btn {
-            background: #0a84ff; color: #fff; border: none;
-            padding: 8px 14px; border-radius: 8px; font-weight: bold; width: 100%;
+            background: #21262d; color: #fff; border: 1px solid #30363d;
+            padding: 10px 16px; border-radius: 10px; font-weight: bold; width: 100%;
             cursor: pointer;
+        }
+        .close-btn:hover { background: #30363d; }
+
+        /* Адаптивность для телефонов */
+        @media (max-width: 600px) {
+            .hero { flex-direction: column-reverse; text-align: center; gap: 15px; }
+            .packages-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Kris41's Repo</h1>
-        <p class="sub">Официальный репозиторий iOS-твиков</p>
+    <div class="container">
+
+        <!-- Шапка профиля репозитория -->
+        <div class="hero">
+            <div class="hero-left">
+                <h1>Kris41's Repo</h1>
+                <div class="subtitle">официальный репозиторий iOS твиков</div>
+                <div class="desc">инструменты, твики и модификации для джейлбрейка устройств</div>
+            </div>
+            <!-- Сюда подтянется твоя аватарка или картинка (можешь положить файл avatar.png в репо) -->
+            <img src="avatar.png" class="avatar" alt="Avatar" onerror="this.style.display='none'">
+        </div>
+
+        <!-- Ссылка на репо и кнопки добавления -->
+        <div class="repo-box">
+            <div class="repo-url-label">Repository URL</div>
+            <div class="repo-url-text">https://krisdev412.github.io/my-repo/</div>
+            
+            <div class="buttons-grid">
+                <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://krisdev412.github.io/my-repo/" class="btn">📦 Add to Cydia</a>
+                <a href="sileo://source/https://krisdev412.github.io/my-repo/" class="btn btn-sileo">⚡ Add to Sileo</a>
+                <a href="zbra://sources/add/https://krisdev412.github.io/my-repo/" class="btn">🦓 Add to Zebra</a>
+            </div>
+        </div>
+
+        <!-- Список пакетов -->
+        <div class="section-title">Packages</div>
+
+        <div class="packages-grid">
+            
+            <!-- Твик 1: NoSlider -->
+            <div class="package-card" onclick="openModal('NoSlider', '1.0-stable', 'Разблокировка экрана кнопкой вместо свайпа. Полезный твик для быстрого доступа к устройству.')">
+                <img src="icons/noslider.png" class="pkg-icon" alt="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'100%\' height=\'100%\' fill=\'%2321262d\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%238b949e\' font-size=\'18\'>NS</text></svg>'">
+                <div class="pkg-info">
+                    <div class="pkg-name">NoSlider</div>
+                    <div class="pkg-meta">1.0-stable</div>
+                    <p class="pkg-desc">Разблокировка экрана кнопкой вместо свайпа.</p>
+                </div>
+            </div>
+
+            <!-- Твик 2: Kumo -->
+            <div class="package-card" onclick="openModal('Kumo', '1.0-stable', 'Красивое приложение погоды со стильным интерфейсом и чистым дизайном.')">
+                <img src="icons/kumo.png" class="pkg-icon" alt="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'100%\' height=\'100%\' fill=\'%2321262d\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%238b949e\' font-size=\'18\'>KM</text></svg>'">
+                <div class="pkg-info">
+                    <div class="pkg-name">Kumo</div>
+                    <div class="pkg-meta">1.0-stable</div>
+                    <p class="pkg-desc">Красивое приложение погоды со стильным интерфейсом.</p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="buttons">
-        <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://krisdev412.github.io/my-repo/" class="btn">Добавить в Cydia</a>
-        <a href="sileo://source/https://krisdev412.github.io/my-repo/" class="btn">Добавить в Sileo</a>
-    </div>
-
-    <div class="section-title">Доступные твики</div>
-
-    <!-- Твик 1: NoSlider -->
-    <div class="card">
-        <div class="card-info">
-            <div class="card-title">NoSlider</div>
-            <p class="card-desc">Разблокировка экрана кнопкой вместо свайпа.</p>
-        </div>
-        <div class="card-right">
-            <span class="badge">v1.0</span>
-            <br>
-            <button class="details-btn" onclick="openModal('NoSlider', 'Разблокировка экрана кнопкой вместо свайпа. Полезный твик для быстрого доступа к устройству.')">Детали</button>
+    <!-- Модальное окно с деталями -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content">
+            <div id="m-title" class="modal-title">Название</div>
+            <div id="m-meta" class="modal-meta">Версия</div>
+            <div id="m-desc" class="modal-desc">Описание</div>
+            <button class="close-btn" onclick="closeModalDirect()">Закрыть</button>
         </div>
     </div>
 
-    <!-- Твик 2: Kumo -->
-    <div class="card">
-        <div class="card-info">
-            <div class="card-title">Kumo</div>
-            <p class="card-desc">Красивое приложение погоды со стильным интерфейсом.</p>
-        </div>
-        <div class="card-right">
-            <span class="badge">v1.0</span>
-            <br>
-            <button class="details-btn" onclick="openModal('Kumo', 'Красивое приложение погоды со стильным интерфейсом и
-                
+    <script>
+        function openModal(title, meta, desc) {
+            document.getElementById('m-title').innerText = title;
+            document.getElementById('m-meta').innerText = meta;
+            document.getElementById('m-desc').innerText = desc;
+            document.getElementById('modal').style.display = 'flex';
+        }
+        function closeModal(e) {
+            if (e.target.id === 'modal') {
+                document.getElementById('modal').style.display = 'none';
+            }
+        }
+        function closeModalDirect() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
