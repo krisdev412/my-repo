@@ -1,4 +1,5 @@
 Package: com.kris.noslider
+Filename: noslider.deb
 Name: NoSlider
 Version: 1.0
 Architecture: iphoneos-arm
@@ -8,6 +9,7 @@ MD5sum: xxxxxxxxxxxxxxxxxxxxxxxx
 ...
 
 Package: com.kris.kumo
+Filename: kumo.deb
 Name: Kumo
 Version: 1.0
 Architecture: iphoneos-arm
