@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kris41's Repo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        p.subtitle {
+            color: #888;
+            font-size: 14px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            background-color: #007aff;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .section-title {
+            font-size: 18px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .package-card {
+            background-color: #1e1e1e;
+            border: 1px solid #2d2d2d;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pkg-info h3 {
+            margin: 0 0 5px 0;
+            color: #fff;
+            font-size: 16px;
+        }
+        .pkg-info p {
+            margin: 0;
+            color: #999;
+            font-size: 13px;
+        }
+        .pkg-version {
+            background-color: #2c2c2e;
+            color: #0a84ff;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kris41's Repo</h1>
+            <p class="subtitle">Кастомные твики для iOS</p>
+        </header>
+
+        <div class="btn-group">
+            <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://kris41-rgh.github.io/my-repo/" class="btn">Открыть в Cydia</a>
+            <a href="sileo://source/https://kris41-rgh.github.io/my-repo/" class="btn">Открыть в Sileo</a>
+        </div>
+
+        <div class="section-title">Пакеты</div>
+
+        <div class="package-card">
+            <div class="pkg-info">
+                <h3>NoSlider</h3>
+                <p>NoSlider Tweak</p>
+            </div>
+            <div class="pkg-version">1.0</div>
+        </div>
+
+        <div class="package-card">
+            <div class="pkg-info">
+                <h3>Kumo</h3>
+                <p>Kumo Tweak</p>
+            </div>
+            <div class="pkg-version">1.0</div>
+        </div>
+    </div>
+</body>
+</html>
