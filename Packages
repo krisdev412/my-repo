@@ -2,7 +2,7 @@ Package: com.kris.noslider
 Name: NoSlider
 Version: 1.0
 Architecture: iphoneos-arm
-Description: NoSlider Tweak
+Description: Unlock your lockscreen with a button instead of swiping
 Maintainer: Kris
 Author: Kris
 Section: Tweaks
@@ -12,8 +12,8 @@ Package: com.kris.kumo
 Name: Kumo
 Version: 1.0
 Architecture: iphoneos-arm
-Description: Kumo Tweak
+Description: A simple weather app with a clean and stylish UI
 Maintainer: Kris
 Author: Kris
 Section: Tweaks
-Filename: deb/Kumo.deb
+Depends: mobilesubstrate
