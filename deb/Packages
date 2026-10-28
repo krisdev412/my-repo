@@ -2,11 +2,11 @@ Package: com.kris.noslider
 Name: NoSlider
 Version: 1.0
 Architecture: iphoneos-arm
-Description: Unlock your lockscreen with a button instead of swiping
-Maintainer: Kris
+Description: Unlock your lockscreen with a button instead of swiping.
+Maintainer: Kris <kris@email.com>
 Author: Kris
 Section: Tweaks
-Filename: deb/NoSlider.deb
+Depends: mobilesubstrate
 
 Package: com.kris.kumo
 Name: Kumo
