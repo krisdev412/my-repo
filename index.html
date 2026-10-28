@@ -178,6 +178,7 @@
 <body>
 
     <div class="container">
+        <!-- Шапка -->
         <div class="hero">
             <div class="hero-left">
                 <h1>Kris41's Repo</h1>
@@ -187,10 +188,22 @@
             <img src="avatar.jpg" class="avatar" alt="Avatar" onerror="this.src='avatar.png'">
         </div>
 
+        <!-- Кнопки добавления -->
         <div class="repo-box">
             <div class="repo-url-label">Repository URL</div>
             <div class="repo-url-text">https://krisdev412.github.io/my-repo/</div>
             
             <div class="buttons-grid">
-                <a href="cydia://url/
-                    
+                <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://krisdev412.github.io/my-repo/" class="btn">📦 Add to Cydia</a>
+                <a href="sileo://source/https://krisdev412.github.io/my-repo/" class="btn btn-sileo">⚡ Add to Sileo</a>
+            </div>
+        </div>
+
+        <!-- Список твиков -->
+        <div class="section-title">Packages</div>
+
+        <div class="packages-grid">
+            <!-- NoSlider -->
+            <div class="package-card" onclick="openModal('NoSlider', '1.0-stable', 'Разблокировка экрана кнопкой вместо свайпа.')">
+                <img src="icons/noslider.png" class="pkg-icon" alt="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'100%\' height=\'100%\' fill=\'%2321262d\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%238b949e\' font-size=\'16\'>NS</text></svg>'">
+                <div class="pkg-info">
