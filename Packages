@@ -2,7 +2,7 @@ Package: com.kris.noslider
 Name: NoSlider
 Version: 1.0
 Architecture: iphoneos-arm
-Filename: noslider.deb
+Filename: deb/noslider.deb
 Size: 14280
 Section: Tweaks
 Depends: mobilesubstrate
@@ -13,7 +13,7 @@ Version: 1.0
 Architecture: iphoneos-arm
 Description: Красивое приложение погоды со стильным интерфейсом.
 Depiction: https://krisdev412.github.io/my-repo/depictions/kumo.html
-Filename: kumo.deb
+Filename: deb/kumo.deb
 Size: 60384
 Maintainer: Kris <kris@email.com>
 Author: Kris
