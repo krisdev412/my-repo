@@ -7,7 +7,6 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            /* Фоновая картинка (если падает, будет просто стильный темный фон) */
             background: linear-gradient(rgba(13, 17, 23, 0.85), rgba(13, 17, 23, 0.95)), url('bg.jpg');
             background-size: cover;
             background-position: center;
@@ -24,7 +23,7 @@
             margin: 0 auto;
         }
 
-        /* Большой верхний баннер с аватаром */
+        /* Шапка профиля с аватаром */
         .hero {
             background: linear-gradient(135deg, #161b22, #1f242c);
             border: 1px solid #30363d;
@@ -54,15 +53,16 @@
             font-size: 13px;
         }
         .avatar {
-            width: 75px;
-            height: 75px;
+            width: 80px;
+            height: 80px;
             border-radius: 14px;
             object-fit: cover;
             border: 2px solid #30363d;
             background-color: #21262d;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
 
-        /* Блок с URL репозитория и кнопками */
+        /* Блок репозитория и кнопок */
         .repo-box {
             background: #161b22;
             border: 1px solid #30363d;
@@ -88,16 +88,16 @@
         }
         .buttons-grid {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
         }
         .btn {
             flex: 1;
-            min-width: 130px;
+            min-width: 140px;
             background: #21262d;
             border: 1px solid #30363d;
             color: #ffffff;
-            padding: 10px 14px;
+            padding: 12px 16px;
             border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
@@ -107,7 +107,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 8px;
         }
         .btn:hover {
             background: #30363d;
@@ -121,7 +121,7 @@
             background: #388bfd;
         }
 
-        /* Заголовок секции пакетов */
+        /* Заголовок пакетов */
         .section-title {
             font-size: 20px;
             font-weight: 700;
@@ -129,7 +129,7 @@
             color: #ffffff;
         }
 
-        /* Сетка твиков (2 колонки) */
+        /* Сетка твиков */
         .packages-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -217,7 +217,6 @@
         }
         .close-btn:hover { background: #30363d; }
 
-        /* Адаптивность для телефонов */
         @media (max-width: 600px) {
             .hero { flex-direction: column-reverse; text-align: center; gap: 15px; }
             .packages-grid { grid-template-columns: 1fr; }
@@ -228,18 +227,18 @@
 
     <div class="container">
 
-        <!-- Шапка профиля репозитория -->
+        <!-- Шапка -->
         <div class="hero">
             <div class="hero-left">
                 <h1>Kris41's Repo</h1>
                 <div class="subtitle">официальный репозиторий iOS твиков</div>
-                <div class="desc">инструменты, твики и модификации для джейлбрейка устройств</div>
+                <div class="desc">инструменты, твики и модификации для джейлбрейка</div>
             </div>
-            <!-- Сюда подтянется твоя аватарка или картинка (можешь положить файл avatar.png в репо) -->
-            <img src="avatar.png" class="avatar" alt="Avatar" onerror="this.style.display='none'">
+            <!-- Твоя аватарка (убедись, что картинка сохранена в репозитории как avatar.jpg или avatar.png) -->
+            <img src="avatar.jpg" class="avatar" alt="Avatar" onerror="this.src='avatar.png'">
         </div>
 
-        <!-- Ссылка на репо и кнопки добавления -->
+        <!-- Ссылка и кнопки Cydia / Sileo -->
         <div class="repo-box">
             <div class="repo-url-label">Repository URL</div>
             <div class="repo-url-text">https://krisdev412.github.io/my-repo/</div>
@@ -247,18 +246,17 @@
             <div class="buttons-grid">
                 <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://krisdev412.github.io/my-repo/" class="btn">📦 Add to Cydia</a>
                 <a href="sileo://source/https://krisdev412.github.io/my-repo/" class="btn btn-sileo">⚡ Add to Sileo</a>
-                <a href="zbra://sources/add/https://krisdev412.github.io/my-repo/" class="btn">🦓 Add to Zebra</a>
             </div>
         </div>
 
-        <!-- Список пакетов -->
+        <!-- Список твиков -->
         <div class="section-title">Packages</div>
 
         <div class="packages-grid">
             
-            <!-- Твик 1: NoSlider -->
+            <!-- NoSlider -->
             <div class="package-card" onclick="openModal('NoSlider', '1.0-stable', 'Разблокировка экрана кнопкой вместо свайпа. Полезный твик для быстрого доступа к устройству.')">
-                <img src="icons/noslider.png" class="pkg-icon" alt="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'100%\' height=\'100%\' fill=\'%2321262d\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%238b949e\' font-size=\'18\'>NS</text></svg>'">
+                <img src="icons/noslider.png" class="pkg-icon" alt="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'100%\' height=\'100%\' fill=\'%2321262d\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%238b949e\' font-size=\'16\' font-family=\'sans-serif\'>NS</text></svg>'">
                 <div class="pkg-info">
                     <div class="pkg-name">NoSlider</div>
                     <div class="pkg-meta">1.0-stable</div>
@@ -266,9 +264,9 @@
                 </div>
             </div>
 
-            <!-- Твик 2: Kumo -->
+            <!-- Kumo -->
             <div class="package-card" onclick="openModal('Kumo', '1.0-stable', 'Красивое приложение погоды со стильным интерфейсом и чистым дизайном.')">
-                <img src="icons/kumo.png" class="pkg-icon" alt="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'100%\' height=\'100%\' fill=\'%2321262d\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%238b949e\' font-size=\'18\'>KM</text></svg>'">
+                <img src="icons/kumo.png" class="pkg-icon" alt="" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\'><rect width=\'100%\' height=\'100%\' fill=\'%2321262d\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%238b949e\' font-size=\'16\' font-family=\'sans-serif\'>KM</text></svg>'">
                 <div class="pkg-info">
                     <div class="pkg-name">Kumo</div>
                     <div class="pkg-meta">1.0-stable</div>
@@ -280,7 +278,7 @@
 
     </div>
 
-    <!-- Модальное окно с деталями -->
+    <!-- Модальное окно -->
     <div id="modal" class="modal" onclick="closeModal(event)">
         <div class="modal-content">
             <div id="m-title" class="modal-title">Название</div>
