@@ -1,402 +1,102 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kris41's Cydia & Sileo Repo</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        ios: {
-                            bg: '#000000',
-                            card: '#1c1c1e',
-                            glass: 'rgba(28, 28, 30, 0.7)',
-                            border: 'rgba(255, 255, 255, 0.1)',
-                            blue: '#0a84ff',
-                            purple: '#bf5af2',
-                            green: '#30d158',
-                            orange: '#ff9f0a',
-                            gray: '#8e8e93'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'SF Pro Text', 'Helvetica Neue', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Kris41's Repo</title>
     <style>
-        .glass-panel {
-            background: rgba(28, 28, 30, 0.75);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: #1c1c1e;
+            color: #ffffff;
+            margin: 0;
+            padding: 15px;
         }
-        .glass-btn {
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
         }
-        .glass-btn:active {
-            transform: scale(0.97);
+        h1 {
+            margin: 0 0 5px 0;
+            font-size: 24px;
+            color: #ffffff;
         }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
+        p.sub {
+            margin: 0;
+            color: #aaaaaa;
+            font-size: 14px;
         }
-        ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.2);
+        .buttons {
+            text-align: center;
+            margin: 20px 0;
         }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 3px;
+        .btn {
+            display: inline-block;
+            background-color: #007aff;
+            color: #ffffff;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.4);
+        .card {
+            background-color: #2c2c2e;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
+            border: 1px solid #3a3a3c;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        .card-desc {
+            font-size: 13px;
+            color: #cccccc;
+            margin: 0;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #3a3a3c;
+            color: #0a84ff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 8px;
         }
     </style>
 </head>
-<body class="bg-black text-white font-sans min-h-screen selection:bg-ios-blue selection:text-white flex flex-col justify-between">
+<body>
 
-    <!-- Notification Banner -->
-    <div id="toast" class="fixed top-5 right-5 z-50 transform translate-y-[-150%] transition-transform duration-300 ease-out flex items-center gap-3 px-4 py-3 rounded-2xl glass-panel shadow-2xl border border-ios-blue/40">
-        <div id="toast-icon" class="text-ios-blue text-lg"><i class="fa-solid fa-circle-check"></i></div>
-        <div id="toast-message" class="text-sm font-medium text-white">Action successful!</div>
+    <div class="header">
+        <h1>Kris41's Repo</h1>
+        <p class="sub">Репозиторий твиков для iOS 6+</p>
     </div>
 
-    <!-- Main Container -->
-    <div class="max-w-3xl mx-auto px-4 py-8 w-full">
-
-        <!-- Header Hero Section -->
-        <header class="glass-panel rounded-3xl p-6 sm:p-8 mb-6 relative overflow-hidden text-center shadow-2xl">
-            <!-- Background Decorative Glow -->
-            <div class="absolute -top-20 -left-20 w-48 h-48 bg-ios-blue/30 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -bottom-20 -right-20 w-48 h-48 bg-ios-purple/30 rounded-full blur-3xl pointer-events-none"></div>
-
-            <div class="relative z-10 flex flex-col items-center">
-                <!-- Repo Avatar -->
-                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-gradient-to-tr from-ios-blue via-ios-purple to-ios-orange p-1 shadow-xl mb-4 transform transition-transform hover:scale-105 duration-300">
-                    <div class="w-full h-full bg-black/90 rounded-[22px] flex items-center justify-center">
-                        <i class="fa-solid fa-box-open text-3xl sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-ios-blue to-ios-purple"></i>
-                    </div>
-                </div>
-
-                <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-1 text-white">Kris41's Repo</h1>
-                <p class="text-xs sm:text-sm text-ios-gray font-medium mb-4">Official Jailbreak Repository for iOS Tweaks</p>
-
-                <!-- Status Badges -->
-                <div class="flex flex-wrap items-center justify-center gap-2 mb-6 text-xs">
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-ios-green/10 text-ios-green border border-ios-green/30 font-semibold">
-                        <span class="w-2 h-2 rounded-full bg-ios-green animate-pulse"></span> Repo Online
-                    </span>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 text-ios-gray border border-white/10">
-                        <i class="fa-solid fa-mobile-screen-button"></i> iOS 6.0+ Supported
-                    </span>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 text-ios-gray border border-white/10">
-                        <i class="fa-solid fa-code-branch"></i> GitHub Pages
-                    </span>
-                </div>
-
-                <!-- URL Copy Field -->
-                <div class="w-full max-w-md bg-black/50 border border-white/10 rounded-2xl p-1.5 flex items-center gap-2 mb-6">
-                    <i class="fa-solid fa-link text-ios-gray ml-3 text-sm"></i>
-                    <input type="text" readonly id="repo-url" value="https://kris41-rgh.github.io/my-repo/" class="bg-transparent text-xs sm:text-sm text-ios-gray font-mono flex-1 outline-none select-all truncate">
-                    <button onclick="copyRepoUrl()" class="glass-btn bg-ios-blue/20 hover:bg-ios-blue/30 text-ios-blue text-xs font-semibold px-4 py-2 rounded-xl border border-ios-blue/30 flex items-center gap-1.5 shrink-0">
-                        <i class="fa-solid fa-copy"></i> Copy
-                    </button>
-                </div>
-
-                <!-- One-Click Install Buttons -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-md">
-                    <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://kris41-rgh.github.io/my-repo/" 
-                       onclick="trackClick('Cydia')"
-                       class="glass-btn bg-gradient-to-r from-ios-blue to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-4 rounded-2xl shadow-lg border border-blue-400/30 flex items-center justify-center gap-2.5">
-                        <i class="fa-solid fa-arrow-down-to-bracket text-base"></i> Add to Cydia
-                    </a>
-                    <a href="sileo://source/https://kris41-rgh.github.io/my-repo/" 
-                       onclick="trackClick('Sileo')"
-                       class="glass-btn bg-gradient-to-r from-ios-purple to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-semibold py-3 px-4 rounded-2xl shadow-lg border border-purple-400/30 flex items-center justify-center gap-2.5">
-                        <i class="fa-solid fa-bolt text-base"></i> Add to Sileo
-                    </a>
-                </div>
-            </div>
-        </header>
-
-        <!-- Main Content Section -->
-        <main>
-            <!-- Search & Filters -->
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mb-6">
-                <div class="relative w-full sm:w-72">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 transform -translate-y-1/2 text-ios-gray text-xs"></i>
-                    <input type="text" id="search-input" onkeyup="filterPackages()" placeholder="Search tweaks..." class="w-full bg-ios-card/80 border border-ios-border rounded-xl pl-9 pr-4 py-2.5 text-xs sm:text-sm text-white placeholder-ios-gray outline-none focus:border-ios-blue transition-colors">
-                </div>
-                <div class="flex items-center gap-2 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0 text-xs">
-                    <button onclick="setFilter('all')" id="filter-all" class="filter-btn active bg-ios-blue text-white font-semibold px-4 py-2 rounded-xl transition-colors shrink-0">All Tweaks</button>
-                    <button onclick="setFilter('system')" id="filter-system" class="filter-btn bg-ios-card hover:bg-white/10 text-ios-gray font-semibold px-4 py-2 rounded-xl transition-colors shrink-0">System</button>
-                    <button onclick="setFilter('ui')" id="filter-ui" class="filter-btn bg-ios-card hover:bg-white/10 text-ios-gray font-semibold px-4 py-2 rounded-xl transition-colors shrink-0">UI Customization</button>
-                </div>
-            </div>
-
-            <!-- Package Grid -->
-            <div id="package-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                <!-- NoSlider Tweak Card -->
-                <div class="package-card glass-panel rounded-2xl p-5 hover:border-ios-blue/50 transition-all duration-300 flex flex-col justify-between group" data-category="ui" data-name="noslider">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="flex items-center gap-3">
-                                <div class="w-12 h-12 rounded-2xl bg-ios-blue/20 border border-ios-blue/30 flex items-center justify-center text-ios-blue text-xl group-hover:scale-110 transition-transform">
-                                    <fa-icon class="fa-solid fa-lock-open"></fa-icon>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-base text-white group-hover:text-ios-blue transition-colors">NoSlider</h3>
-                                    <span class="text-xs text-ios-gray font-mono">com.kris.noslider</span>
-                                </div>
-                            </div>
-                            <span class="bg-ios-blue/20 text-ios-blue border border-ios-blue/30 text-xs font-bold px-2.5 py-1 rounded-full">v1.0</span>
-                        </div>
-                        <p class="text-xs text-ios-gray mb-4 line-clamp-2">Removes the legacy slide to unlock bar on iPhone lockscreen for a clean minimalistic look.</p>
-                    </div>
-
-                    <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs">
-                        <span class="text-ios-gray font-medium"><i class="fa-solid fa-box text-ios-blue mr-1"></i> Tweaks</span>
-                        <button onclick="openModal('noslider')" class="text-ios-blue hover:text-white font-semibold transition-colors flex items-center gap-1">
-                            Details <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Kumo Tweak Card -->
-                <div class="package-card glass-panel rounded-2xl p-5 hover:border-ios-purple/50 transition-all duration-300 flex flex-col justify-between group" data-category="system" data-name="kumo">
-                    <div>
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="flex items-center gap-3">
-                                <div class="w-12 h-12 rounded-2xl bg-ios-purple/20 border border-ios-purple/30 flex items-center justify-center text-ios-purple text-xl group-hover:scale-110 transition-transform">
-                                    <fa-icon class="fa-solid fa-cloud"></fa-icon>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-base text-white group-hover:text-ios-purple transition-colors">Kumo</h3>
-                                    <span class="text-xs text-ios-gray font-mono">com.kris.kumo</span>
-                                </div>
-                            </div>
-                            <span class="bg-ios-purple/20 text-ios-purple border border-ios-purple/30 text-xs font-bold px-2.5 py-1 rounded-full">v1.0</span>
-                        </div>
-                        <p class="text-xs text-ios-gray mb-4 line-clamp-2">Lightweight background enhancement utility for classic iOS devices (iOS 6+).</p>
-                    </div>
-
-                    <div class="pt-3 border-t border-white/5 flex items-center justify-between text-xs">
-                        <span class="text-ios-gray font-medium"><i class="fa-solid fa-box text-ios-purple mr-1"></i> Tweaks</span>
-                        <button onclick="openModal('kumo')" class="text-ios-purple hover:text-white font-semibold transition-colors flex items-center gap-1">
-                            Details <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Empty Search Results -->
-            <div id="no-results" class="hidden glass-panel rounded-2xl p-8 text-center my-6">
-                <i class="fa-solid fa-box-open text-4xl text-ios-gray mb-3"></i>
-                <h3 class="text-lg font-bold text-white mb-1">No tweaks found</h3>
-                <p class="text-xs text-ios-gray">Try adjusting your search query or filters.</p>
-            </div>
-        </main>
+    <div class="buttons">
+        <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://krisdev412.github.io/my-repo/" class="btn">Добавить в Cydia</a>
+        <a href="sileo://source/https://krisdev412.github.io/my-repo/" class="btn">Добавить в Sileo</a>
     </div>
 
-    <!-- Footer -->
-    <footer class="max-w-3xl mx-auto px-4 py-6 w-full text-center border-t border-white/10 text-xs text-ios-gray mt-12 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <div>
-            &copy; 2026 <span class="text-white font-semibold">Kris41</span>. All rights reserved.
-        </div>
-        <div class="flex items-center gap-4">
-            <a href="https://github.com/Kris41-rgh/my-repo" target="_blank" class="hover:text-white transition-colors flex items-center gap-1.5">
-                <i class="fa-brands fa-github text-sm"></i> GitHub Source
-            </a>
-            <span class="text-white/20">•</span>
-            <span class="text-ios-green"><i class="fa-solid fa-shield-halved"></i> HTTPS Secured</span>
-        </div>
-    </footer>
+    <h3 style="color: #8e8e93; font-size: 14px; text-transform: uppercase;">Доступные твики</h3>
 
-    <!-- Package Detail Modal -->
-    <div id="package-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-lg rounded-3xl p-6 sm:p-8 relative transform transition-all border border-white/20 shadow-2xl">
-            <!-- Close Button -->
-            <button onclick="closeModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-ios-gray hover:text-white transition-colors">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <!-- Modal Content (Dynamic) -->
-            <div id="modal-content">
-                <!-- Injected via JS -->
-            </div>
-        </div>
+    <div class="card">
+        <div class="card-title">NoSlider</div>
+        <p class="card-desc">Кастомный твик NoSlider для убирания слайдера.</p>
+        <div class="badge">v1.0</div>
     </div>
 
-    <!-- JavaScript Logic -->
-    <script>
-        // Package Data Store
-        const packages = {
-            noslider: {
-                name: 'NoSlider',
-                package: 'com.kris.noslider',
-                version: '1.0',
-                section: 'Tweaks',
-                author: 'Kris',
-                maintainer: 'Kris',
-                architecture: 'iphoneos-arm',
-                filename: 'deb/NoSlider.deb',
-                description: 'Custom unlock tweak designed to hide or bypass the classic Slide to Unlock bar on iOS 6 lockscreen.',
-                icon: 'fa-lock-open',
-                color: 'ios-blue',
-                size: '~14 KB'
-            },
-            kumo: {
-                name: 'Kumo',
-                package: 'com.kris.kumo',
-                version: '1.0',
-                section: 'Tweaks',
-                author: 'Kris',
-                maintainer: 'Kris',
-                architecture: 'iphoneos-arm',
-                filename: 'deb/Kumo.deb',
-                description: 'A light-weight system tweak providing cloud-like UI enhancements and subtle background effects.',
-                icon: 'fa-cloud',
-                color: 'ios-purple',
-                size: '~18 KB'
-            }
-        };
+    <div class="card">
+        <div class="card-title">Kumo</div>
+        <p class="card-desc">Кастомный твик Kumo.</p>
+        <div class="badge">v1.0</div>
+    </div>
 
-        // Copy Repository URL
-        function copyRepoUrl() {
-            const urlInput = document.getElementById('repo-url');
-            urlInput.select();
-            document.execCommand('copy');
-            showToast('Repository URL copied to clipboard!');
-        }
-
-        // Show Toast Message
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toast-message');
-            toastMsg.innerText = message;
-            toast.classList.remove('translate-y-[-150%]');
-            setTimeout(() => {
-                toast.classList.add('translate-y-[-150%]');
-            }, 3000);
-        }
-
-        // Search and Filter Logic
-        let currentFilter = 'all';
-
-        function setFilter(filter) {
-            currentFilter = filter;
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('bg-ios-blue', 'text-white');
-                btn.classList.add('bg-ios-card', 'text-ios-gray');
-            });
-            const activeBtn = document.getElementById(`filter-${filter}`);
-            if (activeBtn) {
-                activeBtn.classList.remove('bg-ios-card', 'text-ios-gray');
-                activeBtn.classList.add('bg-ios-blue', 'text-white');
-            }
-            filterPackages();
-        }
-
-        function filterPackages() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            const cards = document.querySelectorAll('.package-card');
-            let visibleCount = 0;
-
-            cards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                const name = card.getAttribute('data-name');
-                const matchesSearch = name.includes(query);
-                const matchesFilter = currentFilter === 'all' || category === currentFilter;
-
-                if (matchesSearch && matchesFilter) {
-                    card.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
-            const noResults = document.getElementById('no-results');
-            if (visibleCount === 0) {
-                noResults.classList.remove('hidden');
-            } else {
-                noResults.classList.add('hidden');
-            }
-        }
-
-        // Modal Handlers
-        function openModal(pkgKey) {
-            const pkg = packages[pkgKey];
-            if (!pkg) return;
-
-            const modalContent = document.getElementById('modal-content');
-            modalContent.innerHTML = `
-                <div class="flex items-center gap-4 mb-5">
-                    <div class="w-14 h-14 rounded-2xl bg-${pkg.color}/20 border border-${pkg.color}/30 flex items-center justify-center text-${pkg.color} text-2xl">
-                        <i class="fa-solid ${pkg.icon}"></i>
-                    </div>
-                    <div>
-                        <h2 class="text-xl font-bold text-white">${pkg.name}</h2>
-                        <p class="text-xs font-mono text-ios-gray">${pkg.package}</p>
-                    </div>
-                </div>
-
-                <div class="space-y-3 mb-6">
-                    <div class="bg-black/40 border border-white/5 rounded-2xl p-4 text-xs text-ios-gray space-y-2">
-                        <div class="flex justify-between">
-                            <span>Version:</span>
-                            <span class="text-white font-mono font-semibold">${pkg.version}</span>
-                        </div>
-                        <div class="flex justify-between border-t border-white/5 pt-2">
-                            <span>Architecture:</span>
-                            <span class="text-white font-mono">${pkg.architecture}</span>
-                        </div>
-                        <div class="flex justify-between border-t border-white/5 pt-2">
-                            <span>Maintainer:</span>
-                            <span class="text-white font-medium">${pkg.maintainer}</span>
-                        </div>
-                        <div class="flex justify-between border-t border-white/5 pt-2">
-                            <span>Package Path:</span>
-                            <span class="text-ios-blue font-mono truncate max-w-[200px]">${pkg.filename}</span>
-                        </div>
-                    </div>
-
-                    <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
-                        <h4 class="text-xs font-semibold text-white mb-1">Description</h4>
-                        <p class="text-xs text-ios-gray leading-relaxed">${pkg.description}</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-3">
-                    <a href="${pkg.filename}" download class="w-full glass-btn bg-ios-blue hover:bg-blue-600 text-white font-semibold py-3 rounded-2xl text-center text-xs flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-download"></i> Download .DEB (${pkg.size})
-                    </a>
-                </div>
-            `;
-
-            document.getElementById('package-modal').classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('package-modal').classList.add('hidden');
-        }
-
-        function trackClick(manager) {
-            showToast(`Opening request for ${manager}...`);
-        }
-    </script>
 </body>
 </html>
